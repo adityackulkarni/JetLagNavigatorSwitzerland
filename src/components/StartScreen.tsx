@@ -52,10 +52,8 @@ export const StartScreen = () => {
             <div className="jetlag-start-glow" />
             <div className="jetlag-start-content">
                 <div className="jetlag-start-logo" aria-label="Jet Lag The Game">
-                    <img src="/JLIcon.png" alt="" />
                     <div>
-                        <span>JET LAG</span>
-                        <strong>THE GAME</strong>
+                        <strong><span>JET</span> LAGG</strong>
                     </div>
                 </div>
                 <p className="jetlag-start-kicker">HIDE + SEEK</p>
@@ -71,6 +69,8 @@ export const StartScreen = () => {
                             aria-label="Where are you playing?"
                             value={query}
                             onChange={(event) => setQuery(event.target.value)}
+                            onFocus={(event) => event.currentTarget.select()}
+                            onClick={(event) => event.currentTarget.select()}
                             placeholder="Zurich, Switzerland"
                         />
                         {(searching || results.length > 0) && (
