@@ -30,7 +30,7 @@
         "@radix-ui/react-tooltip": "^1.2.6",
         "@terraformer/arcgis": "^2.1.2",
         "@turf/turf": "^7.2.0",
-        "@vite-pwa/astro": "^0.5.0",
+        "@vite-pwa/astro": "^1.2.0",
         "astro": "^5.7.13",
         "class-variance-authority": "^0.7.1",
         "clsx": "^2.1.1",
