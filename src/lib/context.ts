@@ -15,7 +15,6 @@ import {
     type Question,
     type Questions,
     questionSchema,
-    questionsSchema,
     type Units,
 } from "@/maps/schema";
 
@@ -64,17 +63,11 @@ export const permanentOverlay = persistentAtom<FeatureCollection | null>(
 export const mapGeoJSON = atom<FeatureCollection<
     Polygon | MultiPolygon
 > | null>(null);
-export const polyGeoJSON = persistentAtom<FeatureCollection<
+export const polyGeoJSON = atom<FeatureCollection<
     Polygon | MultiPolygon
-> | null>("polyGeoJSON", null, {
-    encode: JSON.stringify,
-    decode: JSON.parse,
-});
+> | null>(null);
 
-export const questions = persistentAtom<Questions>("questions", [], {
-    encode: JSON.stringify,
-    decode: (x) => questionsSchema.parse(JSON.parse(x)),
-});
+export const questions = atom<Questions>([]);
 export const addQuestion = (question: DeepPartial<Question>) =>
     questionModified(questions.get().push(questionSchema.parse(question)));
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
